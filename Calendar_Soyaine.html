@@ -3,86 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="Calendar_Soyaine.css">
-    <script type="text/javascript" src="Calendar_Soyaine.js"></script>
+    <link rel="stylesheet" type="text/css" href="Calendar_Soyaine.css">
+
 </head>
 <body>
     <div id="calendar_s">
         <nav>
-            <span>北京时间<label>07:11:50</label></span>
+            <span id="bjTime">北京时间<label>07:11:50</label></span>
             <span>年</span>
             <span>月</span>
-            <button>回到今天</button>
-            <span>今年假期</span>
+            <button id="backToday">回到今天</button>
+            <span id="holiday">今年假期</span>
         </nav>
-        <!--
-        <nav>
-            <ul>
-                <li>home</li>
-                <li>class</li>
-                <li>about</li>
-                <li>contact</li>
-            </ul>
-        </nav>
-        -->
+
         <div id="calendar">
-            <!--
-            <ul id="week">
-                <li class="biaotou">日</li>
-                <li class="biaotou">一</li>
-                <li class="biaotou">二</li>
-                <li class="biaotou">三</li>
-                <li class="biaotou">四</li>
-                <li class="biaotou">五</li>
-                <li class="biaotou">六</li>
-            </ul>
-
-
-            <ul id="biaoge">
-                <li>数据1-1</li>
-                <li>数据1-2</li>
-                <li>数据1-3</li>
-                <li>数据1-4</li>
-                <li>数据1-5</li>
-                <li>数据1-6</li>
-                <li>数据1-7</li>
-                <li>数据2-1</li>
-                <li>数据2-2</li>
-                <li>数据2-3</li>
-                <li>数据2-4</li>
-                <li>数据2-5</li>
-                <li>数据2-6</li>
-                <li>数据2-7</li>
-                <li>数据3-1</li>
-                <li>数据3-2</li>
-                <li>数据3-3</li>
-                <li>数据3-4</li>
-                <li>数据3-5<span>假期标识</span><br/><span>日子</span><span>农历</span></li>
-                <li>数据3-6</li>
-                <li>数据3-7</li>
-                <li>数据4-1</li>
-                <li>数据4-2</li>
-                <li>数据4-3</li>
-                <li>数据4-4</li>
-                <li>数据4-5</li>
-                <li>数据4-6</li>
-                <li>数据4-7</li>
-                <li>数据5-1</li>
-                <li>数据5-2</li>
-                <li>数据5-3</li>
-                <li>数据5-4</li>
-                <li>数据5-5</li>
-                <li>数据5-6</li>
-                <li>数据5-7</li>
-                <li>数据6-1</li>
-                <li>数据6-2</li>
-                <li>数据6-3</li>
-                <li>数据6-4</li>
-                <li>数据6-5</li>
-                <li>数据6-6</li>
-                <li>数据6-7</li>
-            </ul>　
-            -->
             <table id="date">
                 <thead>
                     <tr>
@@ -95,18 +29,10 @@
                         <td>六</td>
                     </tr>
                 </thead>
-                <tbody id="datetable">
-                    <tr id="dateNum">
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
+                <tbody id="dateTable">
                 </tbody>
             </table>
+
         </div>
         <div id="today">
             <div>2016-04-08</div>
@@ -124,6 +50,6 @@
             <span>历史上的今天</span>
         </div>
     </div>
-
+    <script src="Calendar_Soyaine.js"></script>
 </body>
 </html>
