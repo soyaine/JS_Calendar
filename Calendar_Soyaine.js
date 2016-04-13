@@ -18,23 +18,31 @@ for (var i = 0; i < 6; i++){
     dateTable.appendChild(newRow);
 }
 
+var lab = document.getElementById("lab");
+var today = new Date();
+var UTCstring = today.toUTCString();
+var labText;
+labText = document.createTextNode(today.getDay()+"&nbsp");
+lab.appendChild(labText);
+labText = document.createTextNode(today.getDate()+"<br/>");
+lab.appendChild(labText);
+labText = document.createTextNode("UTCDate" + today.getUTCDate()+"<br/>");
+lab.appendChild(labText);
+labText = document.createTextNode("minutes" + today.getMinutes()+"<br/>");
+lab.appendChild(labText);
+
+//UTCstring = today.now();
+
+
+//根据指定 年-月-日（格式：YYYY-MM-DD）生成当月日历
+function newCalendar(year, month, date) {
+    year = "jfkldjs";
+
+
+}
 
 //实验：表格内DOM定位
 var someDay = dateTable.childNodes[3].childNodes[1];
 //alert(typeof someDay);
 //var holiday = document.createTextNode("holiday");
 //someDay.appendChild(holiday);
-
-
-//实验：DOM操作Node
-function insert_new_text(){
-    var newText = document.createTextNode("this is an added text");// 新建文本元素
-    var textPart = document.getElementById("jfksdj"); //获取节点
-    textPart.appendChild(newText); //使newText成为textPart的子节点
-}
-
-function insert_new_node(){
-    var newItem = document.createElement("td"); //新建元素节点
-    var destParent = document.getElementsByTagName("body")[0]; //通过tag获取标签
-    destParent.insertBefore(newItem, destParent.firstChild); //在destParent的第一个子节点之前插入newItem
-}

@@ -1,86 +1,86 @@
 * {
-    margin:0;
     font-size:20px;
     color:#000;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    text-align:center;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
 }
-body {
 
-}
 #calendar_s {
     width:80%;
-    height: 100%;
-    margin: auto;
-    color: #e25c38;
-    display: table;
+    height:100%;
+    color:#e25c38;
+    display:table;
+    margin:auto;
 }
+
 #today {
-    font-size-adjust: inherit;
-    float: right;
-    width: 30%;
+    font-size-adjust:inherit;
+    float:right;
+    width:30%;
     height:90%;
     top:0;
-    background-color: antiquewhite;
-    align-content: center;
-    display: table;
+    background-color:#FAEBD7;
+    align-content:center;
+    display:table;
 }
-@media screen {
 
-}
 nav {
-    position: relative;
-    margin-left: 0;
+    position:relative;
+    margin-left:0;
     top:0;
-    height: 10%;
-    background-color: #86a9c0;
-    -webkit-align-items: center;
-            align-items: center;
-    -webkit-align-content: center;
+    height:10%;
+    background-color:#86a9c0;
+    -webkit-align-items:center;
+    align-items:center;
+    -webkit-align-content:center;
 }
+
 #holiday {
-    float: right;
+    float:right;
 }
+
 #bjTime {
-    float: left;
+    float:left;
 }
+
 #calendar {
-    float: left;
+    float:left;
     width:70%;
     top:0;
     bottom:0;
     left:0;
     height:90%;
-    background-color: darksalmon;
-    display: table-cell;
+    background-color:#E9967A;
+    display:table-cell;
 }
-td {
-    border-bottom-color: black;
-    /*display: -webkit-flex; */
-    /*-webkit-flex: 1; */
-    position: relative;
-    left:0;
-    text-align: center;
-    margin-bottom:1px;
-    background-color: powderblue;
-    border: 1px;
-}
-table {
-    border: 1em;
-    width: 100%;
-}
-#dateNum {
 
+td {
+    border-bottom-color:#000;
+    position:relative;
+    left:0;
+    text-align:center;
+    margin-bottom:1px;
+    background-color:#B0E0E6;
+    border:1px;
 }
+
+table {
+    border:1em;
+    width:100%;
+}
+
 #date {
-    width: 100%;
-    height: 100%;
+    width:100%;
+    height:100%;
 }
+
 #dateTable.td {
-    height: 3em;
+    height:3em;
 }
+
 @media screen and (max-width: 599px){
     nav {
         display: inline;
