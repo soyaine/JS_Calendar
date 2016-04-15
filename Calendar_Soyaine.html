@@ -1,11 +1,10 @@
 <!DOCTYPE html>
+<!--@author SongYuting -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Calendar by Soyaine</title>
     <link rel="stylesheet" href="Calendar_Soyaine.css">
-    <link rel="stylesheet" href="FlipClock-master/flipclock.css">
-
 </head>
 <body>
     <div id="calendar_s">
@@ -30,11 +29,19 @@
                 <button id="nextMonth">▷</button>
             </span>
             <button id="backToday">回到今天</button>
-            <span id="holiday">今年假期</span>
+            <span id="holiday">
+                <select>
+                    <option value="0" data-desc="" data-gl=""> 国际节假日</option>
+                    <option value="2016/10/1">国庆节</option>
+                    <option value="2016/3/8">国际妇女节</option>
+                    <option value="2016/9/10" onclick="generateToday(&quot2016/9/10&quot)">教师节</option>
+                    <option value="2016/1/1">元旦</option>
+                </select>
+            </span>
         </nav>
 
         <div id="calendar">
-            <table id="date">
+            <table id="dateZone">
                 <thead>
                     <tr>
                         <td>日</td>
@@ -51,10 +58,12 @@
             </table>
 
         </div>
-        <div id="today">
-            <div>2016-04-08</div>
-            <div>星期五</div>
-            <div>8</div>
+        <div id="todayInfo">
+            <div id="dateInfo">2016-04-08</div>
+            <div id="weekInfo">星期五</div>
+            <div id="dateNum" class="dateNum">8</div>
+            <div id="holidayInfo"></div>
+            <!-- 附加功能，待实现
             <div>猴年三月初三</div>
             <div>丙申年壬辰月庚申日</div>
             <div>星座</div>
@@ -65,14 +74,16 @@
                 </dl>
             </div>
             <span>历史上的今天</span>
+             -->
         </div>
     </div>
 
-    <div id="lab">
-
-    </div>
+    <footer>
+        © Soyaine <br>
+        <a href="out/index.html">产品文档</a>
+        <a href="https://github.com/soyaine/JS_Calendar">Github<img src=""></a>
+        <a href="http://www.jianshu.com/p/4fea34254dff">过程收获</a>
+    </footer>
     <script src="Calendar_Soyaine.js"></script>
-    <script src="jquery.min.js"></script>
-    <script src="FlipClock-master/flipclock.js"></script>
 </body>
 </html>

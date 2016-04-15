@@ -1,10 +1,10 @@
 /**
- * Created by 宋玉婷 on 2016/4/11.
+ * Created by SongYuting .
  */
 
 /**
  * @summary 当前日期
- * @desc 用于记录当前日历状态的Date对象
+ * @desc 用于记录当前日历状态的Date对象，随用户的操作而不断更新
  * @type {Date}
  */
 var currentDate = new Date();
@@ -18,6 +18,14 @@ var today = new Date();
 var thisMonth = today.getMonth();
 var thisYear = today.getFullYear();
 //newCalendar(thisYear, thisMonth);
+
+/**
+ * @summary 今日日期
+ * @desc 在操作日期发生改变时，记录上一次操作后的日期，与currentDate相差一次操作，供日期切换使用
+ * @type {Date}
+ */
+var datedDate;//
+
 
 //初始生成日历
 newCalendar();
@@ -77,6 +85,8 @@ btnBackToday.addEventListener("click", function() {
     newCalendar();
 }, false);
 
+var dateNav = document.getElementsByClassName("date");
+
 
 /**
  * @summary 根据指定 年-月（格式：YYYY-MM）生成当月日历
@@ -95,15 +105,13 @@ btnBackToday.addEventListener("click", function() {
 function newCalendar() {
     var month = currentDate.getMonth();
     var year = currentDate.getFullYear();
+    var date = currentDate.getDate();
     var thisMonthDay = new Date(year, month, 1);
     var thisMonthFirstDay = thisMonthDay.getDay();
     var thisMonthFirstDate = new Date(year, month, - thisMonthFirstDay);
-    //生成日历主体的日期区域
-    generateTable(thisMonthFirstDate);
-    //生成导航区域
-    generateNav(year, month);
-    //生成今日信息区域
-    generateToday(year, month, date);
+    generateTable(thisMonthFirstDate);  //生成日历主体的日期区域
+    generateNav(year, month);  //生成导航区域
+    generateToday();  //生成今日信息区域
     currentDate.setYear(year);
     currentDate.setMonth(month);
     return currentDate;
@@ -150,6 +158,9 @@ function generateTable(firstDate) {
             //设置Node的id，便于后期操作
             var dateInfo = firstDate.toLocaleDateString();
             newDate.setAttribute("id",dateInfo);
+            newDate.setAttribute("class", "date");
+            //设置点击事件，防止被解释为数字，用转义字符加上双引号
+            newDate.setAttribute("onclick", "generateToday(\"" + dateInfo+ "\")");
             newRow.appendChild(newDate);
         }
         dateTable.appendChild(newRow);
@@ -158,34 +169,42 @@ function generateTable(firstDate) {
 
 /**
  *
- * @summary 根据具体日期，生成今日详细信息
- * @desc 在点击指定某个日期时，今日信息区域相关信息随之改变
- * @param {number} year - 指定日期所在年份
- * @param {number} month - 指定日期所在月份
- * @param {number} date - 指定日期
+ * @summary 根据具体日期，生成/切换今日详细信息
+ * @desc 在进行日期切换时，点击某个日期或“回到今天”，根据生成日历时设置的id，修改今日信息区域，相关信息随之改变
+ * @param {string} dateString - 表示日期的字符串，格式 YYYY/MM/DD
  * @todo 获取星座、宜&忌、农历天干地支等信息
  */
-function generateToday(year, month, date) {
-    var day = new Date(year, month, date);
-    var thisMonth = day.getMonth();
-    var thisYear = day.getFullYear();
-    var dateInfo = day.toLocaleDateString();
+function generateToday(dateString) {
+    if(dateString){ //若传递了参数，根据参数设定值
+        var info = dateString.split("/");
+        currentDate.setYear(info[0]); //坑：切换日期跨月时很容易出错
+        if( currentDate.getDate() > 30) {
+            currentDate.setDate(info[2]);
+            currentDate.setMonth(parseInt(info[1])-1 );
+        }else {
+            currentDate.setMonth(parseInt(info[1])-1 );
+            currentDate.setDate(info[2]);
+        }
+    }
+    if( datedDate == null){
+        //第一次生成
+        datedDate = new Date();
+    }else{
+        //获取前一次操作时涉及的元素，清除样式
+        var datedDateString = datedDate.toLocaleDateString();
+        document.getElementById(datedDateString).setAttribute("class","date");
+    }
+    var dateInfo = currentDate.toLocaleDateString(); //获取YYYY/MM/DD格式的日期
+    var dayNum = currentDate.getDate(); //获取日期号数
+    var weekInfo = currentDate.getDay();
+    var weekArray = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    document.getElementById("dateInfo").innerText = dateInfo; //DOM操作日期
+    document.getElementById("dateNum").innerText = dayNum.toString(); //DOM操作号数
+    document.getElementById("weekInfo").innerText = weekArray[weekInfo];
+    var dateTd = document.getElementById(dateInfo);
+    dateTd.setAttribute("class","todayTd"); //设定新的CSS样式
+    // 记录此次操作的日期
+    datedDate.setYear(currentDate.getFullYear()); //坑：这里的顺序不能颠倒，否则切换月的时候会错
+    datedDate.setMonth(currentDate.getMonth());
+    datedDate.setDate(currentDate.getDate());
 }
-
-
-//实验：表格内DOM定位
-//var someDay = dateTable.childNodes[3].childNodes[1];
-//alert(typeof someDay);
-//var holiday = document.createTextNode("holiday");
-//someDay.appendChild(holiday);
-
-
-
-var holiday = document.createElement("div");
-holiday.innerText = "端午";
-var holiday_table = document.getElementById("19");
-holiday_table.appendChild(holiday);
-
-var ladDate = new Date(2016,4,-2);
-dateInfo = ladDate.getDate();
-
