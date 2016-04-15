@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Calendar by Soyaine</title>
-    <link rel="stylesheet" type="text/css" href="Calendar_Soyaine.css">
+    <link rel="stylesheet" href="Calendar_Soyaine.css">
+    <link rel="stylesheet" href="FlipClock-master/flipclock.css">
 
 </head>
 <body>
     <div id="calendar_s">
         <nav>
-            <span id="bjTime">北京时间<label>07:11:50</label></span>
-            <span>年</span>
-            <span>月</span>
+            <!--
+            <span id="bjTime">
+                北京时间
+                <div class="clock">
+
+                </div>
+            </span> -->
+            <span>
+                <button id="lastYear">◀</button>
+                <label id="year"></label>
+                <label>年</label>
+                <button id="nextYear">▶</button>
+            </span>
+            <span>
+                <button id="lastMonth">◁</button>
+                <label id="month"></label>
+                <label>月</label>
+                <button id="nextMonth">▷</button>
+            </span>
             <button id="backToday">回到今天</button>
             <span id="holiday">今年假期</span>
         </nav>
@@ -55,5 +72,7 @@
 
     </div>
     <script src="Calendar_Soyaine.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="FlipClock-master/flipclock.js"></script>
 </body>
 </html>
