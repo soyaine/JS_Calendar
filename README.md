@@ -61,20 +61,19 @@ Calendar written in JavaScript.
    - 适应手机屏幕的样式（未完成）
    - 找相关背景图片的素材（未完成）
 
-- JavaScript时间日历生成
+3. JavaScript时间日历生成
    - DOM操作生成table
    - 公历日历算法
    - 用JavaScript实现
    - 农历节气、国际节假日（未完成）
    - 用JavaScript实现
    - 写注释，完善文档
-
-- 功能细节点
+4. 功能细节点
    - 年份、月份切换：上一年/月、下一年/月
    - 日期切换：点击日期，todayInfo变化，CSS样式变化
    - 今年假期：下拉框选择，日历跳转至假期第一天（未完成）
 
-- 产品文档
+5. 产品文档
    - 写代码的时候写上注释，JSDoc生成
    - 写README.md文档，加入JSDoc
    - 整理绘制流程图，插入README.md
@@ -90,7 +89,7 @@ Calendar written in JavaScript.
 ##其他
 刚接触前端不久，还有很多地方需要提高，之后会继续进行学习，完善这个日历。
 
-在这个任务中，日历生成算法主要受到[The Strange Zen Of JavaScript](http://jszen.blogspot.com/2007_07_01_archive.html)里这篇文章的启发，CSS部分主要在[学习CSS布局](http://zh.learnlayout.com/position.html)这个网站中得到提到，JavaScript则是通过Coursera上的[HTML, CSS and JavaScript](https://coursera.org/learn/html-css-javascript)课程进行了学习。
+在这个任务中，日历生成算法主要受到[The Strange Zen Of JavaScript](http://jszen.blogspot.com/2007_07_01_archive.html)里这篇文章的启发，CSS的知识掌握主要在[学习CSS布局](http://zh.learnlayout.com/position.html)这个网站中得到提高，JavaScript则是通过Coursera上的[HTML, CSS and JavaScript](https://coursera.org/learn/html-css-javascript)课程进行了学习。
 
 同时翻阅的书籍有：
 
