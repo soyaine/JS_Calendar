@@ -1,0 +1,6 @@
+{
+  "name": "Js calendar",
+  "tagline": "原生JavaScript写的日历",
+  "body": "### About The Calendar\r\n所有代码均使用原生 JavaScript 手写，产品文档使用 JSDoc 生成。\r\n刚接触前端不久，还有很多地方需要提高，之后会继续进行学习，完善这个日历。\r\n\r\n在这个任务中，日历生成算法主要受到The Strange Zen Of JavaScript里这篇文章的启发，CSS的知识掌握主要在学习CSS布局这个网站中得到提高，JavaScript则是通过Coursera上的HTML, CSS and JavaScript课程进行了学习。\r\n\r\n同时翻阅的书籍有：\r\n- HTML & CSS\r\n- JavaScript & jQuery交互式Web前端开发\r\n- JavaScript DOM编程艺术\r\n- CSS权威指南",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
