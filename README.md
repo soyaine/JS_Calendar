@@ -1,6 +1,7 @@
 # JS_Calendar
 Calendar written in JavaScript.
-来源于[360前端星计划](http://html5.360.cn/star)中的一个任务，所有代码均为手写，[产品文档](/out/index.html)使用JSDoc生成。
+所有代码均为手写，[产品文档](/out/index.html)使用JSDoc生成。
+具体的完成过程细节：[简书-前端小白如何用JavaScript写一个简单日历](http://www.jianshu.com/p/4fea34254dff)。
 
 ###需求分析：
 1. 选择年、月，显示此年此月日历（列表选择、上下按钮）
